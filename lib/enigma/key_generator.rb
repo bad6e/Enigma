@@ -5,7 +5,7 @@ class KeyGenerator
   attr_accessor :random
 
   def initialize
-    @random = rand.to_s[2..6]
+    @random = 5.times.map { (1..9).to_a.sample }.join
   end
 
   def split_random
@@ -13,19 +13,19 @@ class KeyGenerator
   end
 
   def find_rotation_a
-    @random[0..1].join
+    split_random[0..1].join
   end
 
   def find_rotation_b
-    @random[1..2].join
+    split_random[1..2].join
   end
 
   def find_rotation_c
-    @random[2..3].join
+    split_random[2..3].join
   end
 
   def find_rotation_d
-    @random[3..4].join
+    split_random[3..4].join
   end
 end
 
