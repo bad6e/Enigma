@@ -14,12 +14,3 @@ class FileWriter
 
 end
 
-
-
-#  def file_reader
-#     file_input = File.open(@filename,'r')
-#     data = file_input.read
-#     file_input.close
-#     return data
-#   end
-# end

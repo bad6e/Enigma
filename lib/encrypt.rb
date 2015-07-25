@@ -13,23 +13,12 @@ class Encrypt
     current_date = Runner.new.current_date
     key = KeyGenerator.new.random_key
     FileWriter.new(message).file_writer
-    puts "Created with the key #{key} and date #{current_date}"
+    puts "Created 'encrytped.txt' with the key #{key} and date #{current_date}"
   end
 end
 
 Encrypt.new(input)
 
-
-
-
-
-# message = FileReader.new(input).file_reader
-# FileWriter.new(message).file_writer
-
-# current_date = Runner.new.current_date
-# key = KeyGenerator.new.random_key
-
-#
 
 
 
