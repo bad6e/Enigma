@@ -1,9 +1,6 @@
 #COMBINE THE KEY GENERATOR WITH THE OFFSET
-require './lib/key_generator'
-require './lib/offset'
-
-
-
+require './lib/enigma/key_generator'
+require './lib/enigma/offset'
 
 class Runner
 
@@ -11,8 +8,11 @@ class Runner
     date = CurrentDate.new
     offset = date.calculate_offset
     k = KeyGenerator.new
-    puts final_rotation_a = offset.find_offset_a + k.find_rotation_a
-    puts final_rotation_b = offset.find_offset_b + k.find_rotation_b
+    puts final_rotation_a = offset.find_offset_a.to_i + k.find_rotation_a.to_i
+    puts final_rotation_b = offset.find_offset_b.to_i + k.find_rotation_b.to_i
+    puts final_rotation_c = offset.find_offset_c.to_i + k.find_rotation_c.to_i
+    puts final_rotation_d = offset.find_offset_d.to_i + k.find_rotation_d.to_i
+
   end
 
   #Build Character Map

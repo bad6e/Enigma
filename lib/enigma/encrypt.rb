@@ -1,9 +1,7 @@
-require './lib/file_reader'
-require './lib/runner'
-require './lib/key_generator'
-require './lib/file_writer'
-
-require 'pry'
+require './enigma/lib/file_reader'
+require './enigma/lib/runner'
+require './enigma/lib/key_generator'
+require './enigma/lib/file_writer'
 
 input = ARGV[0] || "message.txt"
 

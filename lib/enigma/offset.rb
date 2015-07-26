@@ -1,4 +1,4 @@
-require 'enigma/current_date'
+require './lib/enigma/current_date'
 
 class Offset
 
