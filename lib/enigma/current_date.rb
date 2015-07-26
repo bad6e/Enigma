@@ -16,10 +16,6 @@ class CurrentDate
   def takes_last_four_digits
     squares_the_date.chars[-4..-1].join
   end
-
-  def calculate_offset
-    Offset.new(takes_last_four_digits)
-  end
 end
 
 

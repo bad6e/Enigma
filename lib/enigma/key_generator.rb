@@ -1,5 +1,3 @@
-#Initialize it when run the runner (nice English)
-#Generate an output valid key
 class KeyGenerator
 
   attr_accessor :random

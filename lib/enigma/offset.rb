@@ -5,6 +5,7 @@ class Offset
   attr_accessor :offset
 
   def initialize(time)
+    #This takes a string
     @offset = time
   end
 
