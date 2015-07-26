@@ -1,17 +1,18 @@
-require './enigma/lib/file_reader'
-require './enigma/lib/runner'
-require './enigma/lib/key_generator'
-require './enigma/lib/file_writer'
+require './lib/enigma/file_reader'
+require './lib/enigma/runner'
+require './lib/enigma/key_generator'
+require './lib/enigma/file_writer'
 
 input = ARGV[0] || "message.txt"
 
 class Encrypt
   def initialize(input)
     message = FileReader.new(input).file_reader
-    current_date = Runner.new.current_date
-    key = KeyGenerator.new.random
-    FileWriter.new(message).file_writer
-    puts "Created 'encrytped.txt' with the key #{key} and date #{current_date}"
+    message_encrypt = Runner.new.encrypt_letter(message)
+
+    # current_date = Runner.new.encrypt_letter(message)
+    FileWriter.new(message_encrypt).file_writer
+    # puts "Created 'encrytped.txt' with the key #{key} and date #{current_date}"
   end
 end
 

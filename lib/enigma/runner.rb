@@ -85,7 +85,7 @@ class Runner
             @results << cipher_for_rotation[val]
         end
       end
-      puts @results.join("")
+      @results.join("")
     end
     @final_results.join("")
 
@@ -143,5 +143,5 @@ end
 
 
 
-input = Runner.new
-puts input.encrypt_letter("hellhellhellshitshitshit").inspect
+# input = Runner.new
+# puts input.encrypt_letter("hellhellhellshitshitshit").inspect
