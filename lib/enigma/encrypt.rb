@@ -8,11 +8,16 @@ input = ARGV[0] || "message.txt"
 class Encrypt
   def initialize(input)
     message = FileReader.new(input).file_reader
-    message_encrypt = Runner.new.encrypt_letter(message)
+    message_encrypt = Runner.new
+    message_to_be_encrypted = message_encrypt.encrypt_letter(message)
+    key = message_encrypt.key
+    @current_date = CurrentDate.new.current_date
+
+
 
     # current_date = Runner.new.encrypt_letter(message)
-    FileWriter.new(message_encrypt).file_writer
-    # puts "Created 'encrytped.txt' with the key #{key} and date #{current_date}"
+    FileWriter.new(message_to_be_encrypted).file_writer
+    puts "Created 'encrytped.txt' with the key #{key} and date #{@current_date}"
   end
 end
 
