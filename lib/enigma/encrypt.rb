@@ -13,11 +13,9 @@ class Encrypt
     key = message_encrypt.key
     @current_date = CurrentDate.new.current_date
 
-
-
     # current_date = Runner.new.encrypt_letter(message)
     FileWriter.new(message_to_be_encrypted).file_writer
-    puts "Created 'encrytped.txt' with the key #{key} and date #{@current_date}"
+    puts "Created 'encrytped.txt' with the key #{key.inspect} and date #{@current_date}"
   end
 end
 

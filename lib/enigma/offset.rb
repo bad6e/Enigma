@@ -6,30 +6,16 @@ class Offset
 
   def initialize(time)
     #This takes a string
-    @offset = time
+    @offset = split_time(time)
   end
 
-  def split_time
-    @offset.split("")
-  end
-
-  def find_offset_a
-    @offset[0].to_s
-  end
-
-  def find_offset_b
-    @offset[1].to_s
-  end
-
-  def find_offset_c
-    @offset[2].to_s
-  end
-
-  def find_offset_d
-    @offset[3].to_s
+  def split_time(time)
+    #now whenever we want to call @offset, we need to change to split_time
+    time.split("").map(&:to_i)
   end
 
 end
+
 
 
 

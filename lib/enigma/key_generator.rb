@@ -1,31 +1,31 @@
 class KeyGenerator
-
-  attr_accessor :random
-
   def initialize
-    @random = 5.times.map { (1..9).to_a.sample }.join
+    @random_key = 5.times.map { (1..9).to_a.sample }
   end
 
-  def split_random
-    @random.split("")
+  def find_array_rotation
+   (find_rotation_a + find_rotation_b + find_rotation_c + find_rotation_d).join.scan(/.{1,2}/).map(&:to_i)
+
   end
 
   def find_rotation_a
-    split_random[0..1].join
+    @random_key[0..1]
   end
 
   def find_rotation_b
-    split_random[1..2].join
+    @random_key[1..2]
   end
 
   def find_rotation_c
-    split_random[2..3].join
+    @random_key[2..3]
   end
 
   def find_rotation_d
-    split_random[3..4].join
+    @random_key[3..4]
   end
 end
+
+
 
 
 
