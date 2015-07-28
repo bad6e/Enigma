@@ -1,5 +1,5 @@
-require './lib/enigma/current_date'
-require './lib/enigma/decrypt_current_date'
+require './lib/enigma/encrypt/current_date'
+require './lib/enigma/decrypt/decrypt_current_date'
 
 class Offset
 

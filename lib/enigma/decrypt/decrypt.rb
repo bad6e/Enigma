@@ -1,7 +1,6 @@
-require './lib/enigma/file_reader'
-require './lib/enigma/decryptor'
-require './lib/enigma/key_generator'
-require './lib/enigma/decrypt_file_writer'
+require './lib/enigma/encrypt/file_reader'
+require './lib/enigma/decrypt/decryptor'
+require './lib/enigma/decrypt/decrypt_file_writer'
 
 
 input = ARGV[0]

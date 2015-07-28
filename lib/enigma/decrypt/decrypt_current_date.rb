@@ -1,5 +1,5 @@
 require 'date'
-require './lib/enigma/offset'
+require './lib/enigma/encrypt/offset'
 
 class DecryptCurrentDate
 

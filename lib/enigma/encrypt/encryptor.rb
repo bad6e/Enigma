@@ -1,6 +1,6 @@
-require './lib/enigma/key_generator'
-require './lib/enigma/offset'
-require './lib/enigma/cipher'
+require './lib/enigma/encrypt/key_generator'
+require './lib/enigma/encrypt/offset'
+require './lib/enigma/encrypt/cipher'
 
 class Encryptor
 

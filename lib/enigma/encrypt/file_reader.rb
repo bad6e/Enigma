@@ -1,5 +1,3 @@
-#Take in the input file name from the command line
-#Read the text into a string
 class FileReader
 
   def initialize(filename)
