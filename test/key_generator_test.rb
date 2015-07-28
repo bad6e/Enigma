@@ -3,9 +3,10 @@ require 'enigma/key_generator'
 
 class KeyGeneratorTest < Minitest::Test
 
+  #KEY FOR ENCRYPT
   def test_key_is_five_digits_long
     input = KeyGenerator.new
-    assert_equal 5, input.random_key.length
+    assert_equal 5, input.random_key.count
   end
 
   def test_key_is_random
@@ -17,10 +18,14 @@ class KeyGeneratorTest < Minitest::Test
     assert_equal 100, results.uniq.count
   end
 
-  def test_takes_key_and_puts_it_into_an_array
+  def test_key_is_an_array
     input = KeyGenerator.new
-    input.random_key = "12345"
-    assert_equal ["1","2","3","4","5"] , input.split_random
+    assert Array input.class == Array
+  end
+
+  def test_key_for_display_prompt_is_a_string
+    input = KeyGenerator.new
+    assert String input.key_for_display_prompt.class == String
   end
 
   def test_find_rotation_a

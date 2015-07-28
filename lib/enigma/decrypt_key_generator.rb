@@ -1,16 +1,16 @@
-class KeyGenerator
+class DecryptKeyGenerator
   attr_accessor :actual_key, :random_key
 
-  def initialize
-    #Comes in as an array
-    @random_key = 5.times.map { (1..9).to_a.sample }
+  def initialize(random_key)
+    @random_key = random_key.chars
   end
 
-  def key_for_display_prompt
-    @random_key.join
-  end
+  # def key_for_display_prompt
+  #   @random_key.join
+  # end
 
   def find_array_rotation
+    #WHAT IS THIS COMING IN
    (find_rotation_a + find_rotation_b + find_rotation_c + find_rotation_d).join.scan(/.{1,2}/).map(&:to_i)
   end
 
@@ -30,8 +30,4 @@ class KeyGenerator
     @random_key[3..4]
   end
 end
-
-
-
-
 

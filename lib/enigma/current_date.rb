@@ -14,6 +14,7 @@ class CurrentDate
   end
 
   def takes_last_four_digits
+    #This is a string of four number
     squares_the_date.chars[-4..-1].join
   end
 end

@@ -1,7 +1,7 @@
 require_relative 'test_helper'
 require 'enigma/current_date'
 
-class DateTest < Minitest::Test
+class CurrentDateTest < Minitest::Test
 
   def test_gives_a_date_in_the_correct_format
     input = CurrentDate.new
@@ -18,6 +18,12 @@ class DateTest < Minitest::Test
     input = CurrentDate.new
     input.current_date = "270715"
     assert_equal "1225" , input.takes_last_four_digits
+  end
+
+  def test_output_is_a_string
+    input = CurrentDate.new
+    input.current_date = "270715"
+    assert input.takes_last_four_digits.class == String
   end
 end
 
