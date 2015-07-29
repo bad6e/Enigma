@@ -13,7 +13,6 @@ class Decryptor
 
 def generates_file_rotation_value
   final_rotation_values = @offset.zip(@valid_key.find_array_rotation)
-
   final_rotation_values.map do |element|
     element.reduce(:+)
   end
