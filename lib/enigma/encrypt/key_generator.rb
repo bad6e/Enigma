@@ -1,5 +1,5 @@
 class KeyGenerator
-  attr_accessor :actual_key, :random_key
+  attr_accessor :actual_key, :random_key, :find_array_rotation
 
   def initialize
     #Comes in as an array

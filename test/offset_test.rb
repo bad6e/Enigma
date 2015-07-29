@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'enigma/offset'
+require 'enigma/encrypt/offset'
 
 class OffsetTest < Minitest::Test
 
@@ -8,7 +8,7 @@ class OffsetTest < Minitest::Test
     assert input.split_time("1225").class == Array
   end
 
-  def test_that_the_length_is_four
+  def test_that_the_offset_length_is_four
     input = Offset.new("1225")
     assert_equal 4, input.split_time("1225").length
   end

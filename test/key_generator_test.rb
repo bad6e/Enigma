@@ -1,9 +1,8 @@
 require_relative 'test_helper'
-require 'enigma/key_generator'
+require 'enigma/encrypt/key_generator'
 
 class KeyGeneratorTest < Minitest::Test
 
-  #KEY FOR ENCRYPT
   def test_key_is_five_digits_long
     input = KeyGenerator.new
     assert_equal 5, input.random_key.count
@@ -16,11 +15,6 @@ class KeyGeneratorTest < Minitest::Test
       results << input
     end
     assert_equal 100, results.uniq.count
-  end
-
-  def test_key_is_an_array
-    input = KeyGenerator.new
-    assert Array input.class == Array
   end
 
   def test_key_for_display_prompt_is_a_string
@@ -50,6 +44,24 @@ class KeyGeneratorTest < Minitest::Test
     input = KeyGenerator.new
     input.random_key = "12345"
     assert_equal "45" , input.find_rotation_d
+  end
+
+  def test_final_rotation_has_four_elements
+    input = KeyGenerator.new
+    input.find_array_rotation
+    assert_equal 4 , input.find_array_rotation.count
+  end
+
+  def test_final_array_rotation_element_is_two_digits
+    input = KeyGenerator.new
+    input.find_array_rotation
+    assert_equal 2 , input.find_array_rotation[0].to_s.length
+  end
+
+  def test_each_element_in_final_rotation_is_a_fixnum
+    input = KeyGenerator.new
+    input.find_array_rotation
+    assert_equal Fixnum, input.find_array_rotation[0].class
   end
 end
 

@@ -1,5 +1,5 @@
 require_relative 'test_helper'
-require 'enigma/current_date'
+require 'enigma/encrypt/current_date'
 
 class CurrentDateTest < Minitest::Test
 
