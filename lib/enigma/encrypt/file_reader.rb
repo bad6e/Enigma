@@ -1,6 +1,6 @@
 class FileReader
 
-  def initialize(filename)
+  def initialize(filename = "test.txt")
     @filename = filename
   end
 
