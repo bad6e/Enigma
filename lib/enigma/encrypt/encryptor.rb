@@ -24,10 +24,14 @@ class Encryptor
     end
   end
 
-  def encrypt_letter(phrase)
-    downcase = phrase.downcase
-    phrase = downcase.scan(/.{1,4}/)
+  def remove_special_characters(phrase)
 
+  end
+
+  def encrypt_letter(phrase)
+    stripped_phrase = phrase.gsub(/[!@#$%^&*)]/,"").downcase
+
+    phrase = stripped_phrase.scan(/.{1,4}/)
     phrase = phrase.map do |phrase|
       phrase = phrase.split("")
       phrase.map.with_index do |k,index|
@@ -54,7 +58,6 @@ class Encryptor
     Hash[@cipher.zip(rotated_characters)]
   end
 end
-
 
 
 

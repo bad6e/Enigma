@@ -12,8 +12,6 @@ class DecryptorTest < Minitest::Test
     @cipher = Cipher.new.cipher
   end
 
-
-
   def test_final_rotation_is_length_is_correct
     assert_equal 4, @input.generates_file_rotation_value.count
   end

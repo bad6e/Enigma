@@ -34,6 +34,26 @@ class EncryptorTest < Minitest::Test
     assert_equal 5, input.encrypt_letter("Hello").length
   end
 
+  def test_phrase_can_take_special_characters_in_words
+    input = Encryptor.new
+    assert_equal 5, input.encrypt_letter("He#$*llo").length
+  end
+
+  def test_phrase_can_just_take_special_characters_and_not_crash
+    input = Encryptor.new
+    assert_equal 0, input.encrypt_letter("!@").length
+  end
+
+  def test_phrase_can_take_special_characters_at_end_of_words
+    input = Encryptor.new
+    assert_equal 5, input.encrypt_letter("Hello$").length
+  end
+
+  def test_phrase_can_take_special_characters_at_beginning_of_words
+    input = Encryptor.new
+    assert_equal 5, input.encrypt_letter("$Hello").length
+  end
+
   def test_creates_the_correct_rotation_hash_length
     input = Encryptor.new
     assert_equal 39, input.creates_rotation_hash(1).length
