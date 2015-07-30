@@ -1,7 +1,6 @@
 require_relative 'test_helper'
 require 'enigma/decrypt/decryptor'
 
-
 class DecryptorTest < Minitest::Test
 
   def setup

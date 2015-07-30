@@ -16,7 +16,7 @@ class CrackRunner
     @message_to_be_cracked = message_crack.put_in_order(message)
 
     FileWriter.new(decrypt_letter(message), input_1).file_writer
-    puts "Created #{input_1} with the date #{input_2}"
+    puts "Created #{input_1} with the key #{@message_to_be_cracked} date #{input_2}"
   end
 
 

@@ -1,9 +1,7 @@
 require_relative 'test_helper'
 require 'enigma/encrypt/encryptor'
 
-
 class EncryptorTest < Minitest::Test
-
 
   def test_encrypt_phrase_is_random
     results = []
