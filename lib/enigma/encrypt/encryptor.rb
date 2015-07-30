@@ -24,9 +24,6 @@ class Encryptor
     end
   end
 
-  def remove_special_characters(phrase)
-
-  end
 
   def encrypt_letter(phrase)
     stripped_phrase = phrase.gsub(/[!@#$%^&*)]/,"").downcase

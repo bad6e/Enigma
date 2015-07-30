@@ -2,12 +2,10 @@ require './lib/enigma/encrypt/file_reader'
 require './lib/enigma/decrypt/decryptor'
 require './lib/enigma/decrypt/decrypt_file_writer'
 
-
 input = ARGV[0] || "encrypted.txt"
 input_1 = ARGV[1] || "decrypted.txt"
 input_2 = ARGV[2] || "82648"
 input_3 = ARGV[3] || "280715"
-
 
 class DecryptRunner
   def initialize(input, input_1, input_2, input_3)
