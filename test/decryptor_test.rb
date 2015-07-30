@@ -63,12 +63,10 @@ class DecryptorTest < Minitest::Test
   end
 
   def test_creates_the_correct_rotation_hash_length
-
     assert_equal 39, @input.creates_rotation_hash(1).length
   end
 
   def test_number_of_rotations_are_negative
-
     assert_equal false, @input.generates_file_rotation_value[0] < 0
     assert_equal false, @input.generates_file_rotation_value[1] < 0
     assert_equal false, @input.generates_file_rotation_value[2] < 0

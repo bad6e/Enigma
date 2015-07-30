@@ -13,7 +13,6 @@ class Offset
   def split_time(time)
     time.split("").map(&:to_i)
   end
-
 end
 
 

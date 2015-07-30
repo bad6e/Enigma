@@ -14,7 +14,6 @@ class DecryptRunner
     message_to_be_decrypted = message_decrypt.decrypt_letter(message)
     FileWriter.new(message_to_be_decrypted, input_1).file_writer
     puts "Created #{input_1} with the key #{input_2} and date #{input_3}"
-
   end
 end
 

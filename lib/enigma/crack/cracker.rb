@@ -28,7 +28,6 @@ class Cracker
   def find_distance(encrypted_char, known_char)
     characters = @cipher
     start = characters.index(known_char)
-
     counter = 0
     until characters[start] == encrypted_char
       characters = characters.rotate

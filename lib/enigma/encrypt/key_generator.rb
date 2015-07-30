@@ -2,7 +2,6 @@ class KeyGenerator
   attr_accessor :actual_key, :random_key, :find_array_rotation
 
   def initialize
-    #Comes in as an array
     @random_key = 5.times.map { (1..9).to_a.sample }
   end
 

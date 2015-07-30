@@ -10,6 +10,5 @@ class FileWriter
     file_output.write(@message)
     file_output.close
   end
-
 end
 

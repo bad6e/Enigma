@@ -14,7 +14,6 @@ class CrackRunner
     message = FileReader.new(input).file_reader
     message_crack = Cracker.new
     @message_to_be_cracked = message_crack.put_in_order(message)
-
     FileWriter.new(decrypt_letter(message), input_1).file_writer
     puts "Created #{input_1} with the key #{@message_to_be_cracked} date #{input_2}"
   end
@@ -23,7 +22,6 @@ class CrackRunner
   def decrypt_letter(phrase)
     downcase = phrase.downcase
     phrase = downcase.scan(/.{1,4}/)
-
     phrase = phrase.map do |phrase|
       phrase = phrase.split("")
       phrase.map.with_index do |k,index|
