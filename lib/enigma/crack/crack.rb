@@ -34,10 +34,10 @@ class CrackRunner
             cipher_for_rotation = creates_rotation_hash(@message_to_be_cracked[1] * -1)
             cipher_for_rotation[k]
         elsif index == 2
-            cipher_for_rotation = creates_rotation_hash(@message_to_be_cracked[2]* -1)
+            cipher_for_rotation = creates_rotation_hash(@message_to_be_cracked[2] * -1)
             cipher_for_rotation[k]
         else
-            cipher_for_rotation = creates_rotation_hash(@message_to_be_cracked[3]* -1)
+            cipher_for_rotation = creates_rotation_hash(@message_to_be_cracked[3] * -1)
             cipher_for_rotation[k]
         end
       end
