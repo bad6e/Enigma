@@ -4,7 +4,7 @@ require './lib/enigma/encrypt/cipher'
 
 class Encryptor
 
-  attr_accessor :date, :offset, :key
+  attr_reader :date, :offset, :key
 
   def initialize
     date_array = CurrentDate.new.takes_last_four_digits
@@ -24,30 +24,17 @@ class Encryptor
     end
   end
 
-  def encrypt_letter(phrase)
-    stripped_phrase = phrase.gsub(/[!@#$%^&*)]/,"").downcase
-
-    phrase = stripped_phrase.scan(/.{1,4}/)
-    phrase = phrase.map do |phrase|
-      phrase = phrase.split("")
-      phrase.map.with_index do |k,index|
-        if index == 0
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[0])
-            cipher_for_rotation[k]
-        elsif index == 1
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[1])
-            cipher_for_rotation[k]
-        elsif index == 2
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[2])
-            cipher_for_rotation[k]
-        else
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[3])
-            cipher_for_rotation[k]
-        end
-      end
-    end
-    phrase.join
+  def strip(phrase)
+    phrase.gsub(/[!@#$%^&*)]/,"").downcase
   end
+
+
+  def encrypt_letter(phrase, multiplier = 1)
+     strip(phrase).chars.map.with_index do |k,index|
+       cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[(index % 4)] * multiplier)
+       cipher_for_rotation[k]
+     end.join
+ end
 
   def creates_rotation_hash(number_of_rotations)
     rotated_characters = @cipher.rotate(number_of_rotations)

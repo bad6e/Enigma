@@ -5,10 +5,6 @@ class DecryptorTest < Minitest::Test
 
   def setup
     @input = Decryptor.new("82648", "280715")
-    @time = DecryptCurrentDate.new("280715").takes_last_four_digits
-    @offset = Offset.new(time).split_time(time)
-    @valid_key = DecryptKeyGenerator.new("82648")
-    @cipher = Cipher.new.cipher
   end
 
   def test_final_rotation_is_length_is_correct
@@ -19,16 +15,12 @@ class DecryptorTest < Minitest::Test
     assert_equal Fixnum, @input.generates_file_rotation_value[0].class
   end
 
-  def test_offset_values_and_valid_key_values_are_zipped_into_an_array
-    assert_equal [[1, 82], [2, 26], [2, 64], [5, 48]], @offset.zip(@valid_key.find_array_rotation)
-  end
-
   def test_final_rotation_is_correct
     assert_equal [83, 28, 66, 53] , @input.generates_file_rotation_value
   end
 
   def test_encrypted_phrase_matches_the_input_phrase_length
-    assert_equal 5, @input.decrypt_letter("Hello").length
+    assert_equal 5, @input.decrypt_letter("hello").length
   end
 
   def test_long_phrase_is_encrypted_correctly

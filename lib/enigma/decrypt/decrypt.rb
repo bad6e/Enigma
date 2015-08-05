@@ -1,6 +1,6 @@
 require './lib/enigma/encrypt/file_reader'
 require './lib/enigma/decrypt/decryptor'
-require './lib/enigma/decrypt/decrypt_file_writer'
+require './lib/enigma/encrypt/encrypt_file_writer'
 
 input = ARGV[0] || "encrypted.txt"
 input_1 = ARGV[1] || "decrypted.txt"

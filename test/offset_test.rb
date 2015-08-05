@@ -16,7 +16,7 @@ class OffsetTest < Minitest::Test
   def test_that_the_numbers_are_fixnums
     input = Offset.new("1225")
     numbers = input.split_time("1225")
-    assert numbers[0], numbers.class == Fixnum
+    assert_kind_of Fixnum, numbers[0]
   end
 end
 

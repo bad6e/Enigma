@@ -18,29 +18,11 @@ class Decryptor
     end
   end
 
-def decrypt_letter(phrase)
-    downcase = phrase.downcase
-    phrase = downcase.scan(/.{1,4}/)
-
-    phrase = phrase.map do |phrase|
-      phrase = phrase.split("")
-      phrase.map.with_index do |k,index|
-        if index == 0
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[0] * -1)
-            cipher_for_rotation[k]
-        elsif index == 1
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[1] * -1)
-            cipher_for_rotation[k]
-        elsif index == 2
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[2] * -1)
-            cipher_for_rotation[k]
-        else
-            cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[3] * -1)
-            cipher_for_rotation[k]
-        end
-      end
-    end
-    phrase.join
+  def decrypt_letter(phrase, multiplier = -1)
+    phrase.chars.map.with_index do |k,index|
+       cipher_for_rotation = creates_rotation_hash(generates_file_rotation_value[(index % 4)] * multiplier)
+       cipher_for_rotation[k]
+    end.join
   end
 
   def creates_rotation_hash(number_of_rotations)

@@ -2,7 +2,7 @@ require_relative 'test_helper'
 require 'enigma/encrypt/current_date'
 
 class CurrentDateTest < Minitest::Test
-
+#DATES THAT BEGIN WITH ZERO
   def test_gives_a_date_in_the_correct_format
     input = CurrentDate.new
     assert_equal 6, Date.today.strftime('%d%m%y').length

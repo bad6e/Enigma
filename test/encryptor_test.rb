@@ -59,7 +59,7 @@ class EncryptorTest < Minitest::Test
 
   def test_number_of_rotations_is_not_negative
     input = Encryptor.new
-    assert_equal true, input.generates_file_rotation_value[0] > 0
+    assert input.generates_file_rotation_value[0] > 0
     assert_equal true, input.generates_file_rotation_value[1] > 0
     assert_equal true, input.generates_file_rotation_value[2] > 0
     assert_equal true, input.generates_file_rotation_value[3] > 0

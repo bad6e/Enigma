@@ -6,7 +6,6 @@ class Offset
   attr_accessor :offset
 
   def initialize(time)
-    #This takes in a string
     @offset = split_time(time)
   end
 
